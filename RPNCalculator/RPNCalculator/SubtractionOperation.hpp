@@ -1,4 +1,14 @@
-class SubtractionOperation : AbstractOperation {
+#include "AbstractOperation.hpp"
+
+class SubtractionOperation : public AbstractOperation {
 public:
-	static constant char SUBTRACTION_CODE = '-';
+	//members
+	static const char SUBTRACTION_CODE = '-';
+	
+	//methods
+	SubtractionOperation() : AbstractOperation(SUBTRACTION_CODE) {};
+	virtual ~SubtractionOperation() {};
+	int perform(int above, int below) {
+		return below - above;
+	}
 };

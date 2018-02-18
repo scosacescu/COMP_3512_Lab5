@@ -1,4 +1,14 @@
-class MultiplicationOperation : AbstractOperation {
+#include "AbstractOperation.hpp"
+
+class MultiplicationOperation : public AbstractOperation {
 public:
-	static constant char MULTIPLICATION_CODE = '*';
+	//members
+	static const char MULTIPLICATION_CODE = '*';
+	
+	//methods
+	MultiplicationOperation() : AbstractOperation(MULTIPLICATION_CODE) {};
+	virtual ~MultiplicationOperation() {};
+	int perform(int above, int below) {
+		return below * above;
+	}
 };
